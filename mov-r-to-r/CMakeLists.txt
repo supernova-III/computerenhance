@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(8086sim LANGUAGES CXX C)
+
+set(CMAKE_CXX_STANDARD 23)
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+  VS_DEBUGGER_WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/tests)
+set_property(DIRECTORY ${PROJECT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${PROJECT_NAME})
